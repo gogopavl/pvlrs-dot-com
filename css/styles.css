@@ -1,0 +1,197 @@
+body {
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center;
+  height: 100vh; */
+  font-family: "Sulphur Point", sans-serif;
+}
+
+#name {
+  font-weight: 700;
+  font-size: 7vh;
+}
+
+#job-title {
+  font-size: 3vh;
+}
+
+a#onetrust-link:link,
+a#onetrust-link:visited,
+a#onetrust-link:active {
+  color: #28a745;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a#onetrust-link:hover {
+  color: #28a745;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a.media-icon:link,
+a.media-icon:visited,
+a.media-icon:hover,
+a.media-icon:active {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.jumbotron {
+  background-color: white;
+}
+
+.icon {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+#cpu-icon {
+  color: #3498db;
+}
+
+#left {
+  text-align: center;
+}
+
+#right {
+  text-align: center;
+}
+
+.container {
+  min-width: 90vw;
+  min-height: 50vh;
+}
+
+.debug {
+  border-width: 2px;
+  border: #222;
+  border-style: solid;
+  margin: 5px;
+}
+
+#profile-picture {
+  width: 35vw;
+  border-radius: 50%;
+  box-shadow: 0 50px 50px rgb(0 0 0 / 0.2);
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+#github-icon {
+  font-size: 5vw;
+  text-align: center;
+}
+
+#linkedin-icon {
+  font-size: 5vw;
+  text-align: center;
+}
+
+#facebook-icon {
+  font-size: 5vw;
+  text-align: center;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #left {
+    text-align: right;
+  }
+
+  #right {
+    text-align: left;
+  }
+
+  #icon-row {
+    max-width: 35vw;
+  }
+
+  #github-icon {
+    font-size: 5vw;
+    text-align: left;
+  }
+
+  #linkedin-icon {
+    font-size: 5vw;
+    text-align: left;
+  }
+
+  #facebook-icon {
+    font-size: 5vw;
+    text-align: left;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #left {
+    text-align: right;
+  }
+
+  #right {
+    text-align: left;
+  }
+
+  #icon-row {
+    max-width: 35vw;
+  }
+
+  #github-icon {
+    font-size: 5vw;
+    text-align: left;
+  }
+
+  #linkedin-icon {
+    font-size: 5vw;
+    text-align: left;
+  }
+
+  #facebook-icon {
+    font-size: 5vw;
+    text-align: left;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  p {
+    max-width: 35vw;
+  }
+
+  #left {
+    text-align: right;
+  }
+
+  #right {
+    text-align: left;
+  }
+
+  #icon-row {
+    max-width: 35vw;
+  }
+
+  #github-icon {
+    font-size: 5vw;
+    text-align: left;
+  }
+
+  #linkedin-icon {
+    font-size: 5vw;
+    text-align: left;
+  }
+
+  #facebook-icon {
+    font-size: 5vw;
+    text-align: left;
+  }
+}
