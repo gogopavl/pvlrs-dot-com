@@ -1,13 +1,12 @@
-/* Mobile-first design */
-/* Extra small (portrait phones, less than 576px) and small devices (landscape phones, 576px and up) */
-
+/* Used for debugging html - will render a border around the element */
 .debug {
   border-width: 2px;
   border: #222;
   border-style: solid;
-  /* margin: 5px; */
 }
 
+/* Mobile-first design */
+/* Extra small (portrait phones, less than 576px) and small devices (landscape phones, 576px and up) */
 body {
   font-family: "Sulphur Point", sans-serif;
 }
