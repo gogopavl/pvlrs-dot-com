@@ -5,29 +5,105 @@
   border-style: solid;
 }
 
-/* Mobile-first design */
-/* Extra small (portrait phones, less than 576px) and small devices (landscape phones, 576px and up) */
+/* ============================================================
+   Mobile-first base styles (phones, < 768px)
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   font-family: "Sulphur Point", sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  color: #111;
+  background-color: #fff;
+}
+
+.navbar {
+  padding: 0.75rem 1rem;
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+#navbar-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
 }
 
 .jumbotron {
-  background-color: white;
-  margin-top: 5%;
+  background-color: #fff;
+  margin: 0;
+  padding: 1.5rem 0 2.5rem;
+  min-height: calc(100vh - 4.5rem);
+  display: flex;
+  align-items: center;
+}
+
+.page-container {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.hero-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+#photo-container,
+#text-container {
+  width: 100%;
+  text-align: center;
+}
+
+#profile-picture {
+  display: block;
+  width: min(58vw, 14rem);
+  height: auto;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 0 1.75rem 2.5rem rgb(0 0 0 / 0.18);
 }
 
 #name {
-  margin-top: 5%;
+  margin: 0.25rem 0 0.5rem;
   font-weight: 700;
-  font-size: xx-large;
+  font-size: clamp(1.75rem, 7vw, 2.25rem);
+  line-height: 1.15;
 }
 
 #job-title {
-  font-size: x-large;
+  margin: 0 0 1rem;
+  font-size: clamp(1.05rem, 4.4vw, 1.35rem);
+  font-weight: 300;
+  line-height: 1.35;
 }
 
-p {
-  font-size: large;
+#text-container p {
+  margin: 0 auto 0.85rem;
+  max-width: 36rem;
+  font-size: clamp(0.95rem, 3.8vw, 1.1rem);
+  font-weight: 300;
+  line-height: 1.45;
 }
 
 a#spotify-link:link,
@@ -42,14 +118,13 @@ a#spotify-link:hover {
   color: #5b8fa2;
   background-color: transparent;
   text-decoration: underline;
-  /* text-shadow: 0 0 4px black; */
 }
 
 a.media-icon-link:link,
 a.media-icon-link:visited,
 a.media-icon-link:hover,
 a.media-icon-link:active {
-  color: black;
+  color: #111;
   background-color: transparent;
   text-decoration: none;
 }
@@ -58,49 +133,224 @@ a.media-icon-link:active {
   color: #3498db;
 }
 
-#photo-container {
-  text-align: center;
-}
-
-#text-container {
-  text-align: center;
-}
-
-#profile-picture {
-  width: 35vw;
-  border-radius: 50%;
-  box-shadow: 0 50px 50px rgb(0 0 0 / 0.2);
+#icon-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  width: 100%;
+  max-width: 20rem;
+  margin: 1.25rem auto 0;
+  padding: 0;
 }
 
 .media-icon-col {
-  font-size: 8vw;
+  flex: 1 1 0;
+  min-width: 0;
   text-align: center;
+  font-size: clamp(1.6rem, 7vw, 2rem);
+  line-height: 1;
 }
 
-/* Medium (tablets, 768px and up), large (desktops, 992px and up) and extra large devices (large desktops, 1200px and up) */
-@media (min-width: 768px) {
-  #name {
-    margin-top: 0;
+.media-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+/* ============================================================
+   Large phones / small tablets (landscape phones, 576px+)
+   ============================================================ */
+@media (min-width: 576px) {
+  .page-container {
+    padding: 0 1.75rem;
   }
 
-  p {
-    max-width: 35vw;
+  #profile-picture {
+    width: min(42vw, 16rem);
+  }
+
+  #icon-row {
+    max-width: 22rem;
+    gap: 0.5rem;
+  }
+}
+
+/* ============================================================
+   Tablets / iPads (portrait, 768px+)
+   Keep a stacked layout so content breathes on iPad portrait.
+   ============================================================ */
+@media (min-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.4rem;
+  }
+
+  #navbar-logo {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .jumbotron {
+    padding: 2rem 0 3rem;
+  }
+
+  .page-container {
+    padding: 0 2.5rem;
+  }
+
+  .hero-row {
+    gap: 1.75rem;
+  }
+
+  #profile-picture {
+    width: min(38vw, 18rem);
+    box-shadow: 0 2.5rem 3rem rgb(0 0 0 / 0.18);
+  }
+
+  #name {
+    font-size: clamp(2.25rem, 4vw, 2.75rem);
+  }
+
+  #job-title {
+    font-size: clamp(1.35rem, 2.6vw, 1.6rem);
+  }
+
+  #text-container p {
+    font-size: 1.2rem;
+    max-width: 40rem;
+  }
+
+  #icon-row {
+    max-width: 24rem;
+    gap: 0.75rem;
+  }
+
+  .media-icon-col {
+    font-size: 2.15rem;
+  }
+
+  .media-icon-link {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* ============================================================
+   iPad landscape / small desktops (992px+)
+   Side-by-side hero layout.
+   ============================================================ */
+@media (min-width: 992px) {
+  .jumbotron {
+    padding: 2.5rem 0;
+  }
+
+  .page-container {
+    padding: 0 3rem;
+  }
+
+  .hero-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
   }
 
   #photo-container {
+    width: auto;
+    flex: 0 0 auto;
     text-align: right;
   }
 
   #text-container {
+    width: auto;
+    flex: 1 1 0;
+    max-width: 34rem;
     text-align: left;
+  }
+
+  #profile-picture {
+    width: clamp(14rem, 22vw, 20rem);
+    margin: 0;
+  }
+
+  #name {
+    margin-top: 0;
+    font-size: clamp(2.4rem, 3vw, 3rem);
+  }
+
+  #job-title {
+    font-size: clamp(1.4rem, 1.8vw, 1.7rem);
+  }
+
+  #text-container p {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
+    font-size: 1.15rem;
   }
 
   #icon-row {
-    max-width: 35vw;
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 22rem;
   }
 
   .media-icon-col {
-    font-size: 4.5vw;
     text-align: left;
+    font-size: 2rem;
+  }
+
+  .media-icon-link {
+    justify-content: flex-start;
+  }
+}
+
+/* ============================================================
+   Large desktops (1200px+)
+   ============================================================ */
+@media (min-width: 1200px) {
+  .page-container {
+    padding: 0 4rem;
+  }
+
+  .hero-row {
+    gap: 3.5rem;
+  }
+
+  #text-container {
+    max-width: 38rem;
+  }
+
+  #profile-picture {
+    width: clamp(16rem, 20vw, 22rem);
+    box-shadow: 0 3rem 3.25rem rgb(0 0 0 / 0.2);
+  }
+
+  #name {
+    font-size: 3.1rem;
+  }
+
+  #job-title {
+    font-size: 1.75rem;
+  }
+
+  #text-container p {
+    font-size: 1.25rem;
+  }
+
+  #icon-row {
+    max-width: 24rem;
+  }
+
+  .media-icon-col {
+    font-size: 2.25rem;
   }
 }
